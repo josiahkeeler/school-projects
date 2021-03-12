@@ -5,6 +5,9 @@
 
 #define SPECIFIERS "cspdiuxX%"
 #define FLAGS "-0.*"
+#define HEX_UP "0123456789ABCDEF"
+#define HEX_LOW "0123456789abcdef"
+
 
 int			ft_printf(const char *, ...);
 const char	*str_loop(const char *);
