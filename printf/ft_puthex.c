@@ -6,13 +6,13 @@
 /*   By: jokeeler <jokeeler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 22:07:18 by jokeeler          #+#    #+#             */
-/*   Updated: 2021/03/13 22:08:59 by jokeeler         ###   ########.fr       */
+/*   Updated: 2021/03/13 22:11:07 by jokeeler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_hex(unsigned int n, char specifier) //takes unsigned int
+void	ft_put_hex(unsigned int n, char specifier)
 {
 	char hex[9];
 	int i;
