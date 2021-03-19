@@ -16,7 +16,7 @@ void	ft_puthex(unsigned long n, char specifier)
 {
 	char hex[20];
 	int i;
-	unsigned int loop;
+	unsigned long loop;
 	char *base16;
 
 	i = 0;
@@ -31,6 +31,12 @@ void	ft_puthex(unsigned long n, char specifier)
 	}
 	while (i)
 		ft_putchar_fd(hex[--i], 1);
+}
+
+void	ft_convert_hex(const char *input, va_list ap)
+{
+	if (*input && (*input == 'x' || *input == 'X'))
+		ft_puthex((unsigned long)va_arg(ap, void *), *input);
 }
 
 void	ft_convert_ptr(const char *input, va_list ap)

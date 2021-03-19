@@ -6,7 +6,7 @@
 /*   By: jokeeler <jokeeler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:31:36 by josiahkeele       #+#    #+#             */
-/*   Updated: 2021/03/19 00:26:03 by jokeeler         ###   ########.fr       */
+/*   Updated: 2021/03/19 00:42:57 by jokeeler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ const char *arg_loop(const char *input, va_list ap)
 		ft_convert_str(input, ap);
 		ft_convert_spec(input);
 		ft_convert_ptr(input, ap);
+		ft_convert_hex(input, ap);
 		input++;
 	}
 	else if (*input)
@@ -84,6 +85,8 @@ int main(void)
 
 	str = "hello world";
 	ft_printf("Test string.\nPrint $ = %------c\nPrint string = %s\nPrint %% = %%\n", '$', "string");
+	ft_printf("Print hex [%X]\n", -20);
+	printf("Print hex [%X]\n", -20);
 	ft_printf("Print string. [%s]\nprint pointer [%p]\n", str, str);
 	printf("Print string. [%s]\nprint pointer [%p]\n", str, str);
 	return (0);
