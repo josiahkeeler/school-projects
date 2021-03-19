@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josiahkeeler <josiahkeeler@student.42.f    +#+  +:+       +#+        */
+/*   By: jokeeler <jokeeler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:31:36 by josiahkeele       #+#    #+#             */
-/*   Updated: 2021/03/04 15:57:23 by josiahkeele      ###   ########.fr       */
+/*   Updated: 2021/03/19 00:26:03 by jokeeler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "stdio.h"
 
 /** malloc, free, write, va_start, va_arg, va_copy,
 va_end
@@ -68,9 +69,10 @@ const char *arg_loop(const char *input, va_list ap)
 		ft_convert_char(input, ap);
 		ft_convert_str(input, ap);
 		ft_convert_spec(input);
+		ft_convert_ptr(input, ap);
 		input++;
 	}
-	else
+	else if (*input)
 		input++;
 	return (input);
 }
@@ -78,6 +80,11 @@ const char *arg_loop(const char *input, va_list ap)
 
 int main(void)
 {
-	ft_printf("Test string.\nPrint $ = %------c\nPrint string = %s\nPrint %% = %%", '$', "string");
+	char *str;
+
+	str = "hello world";
+	ft_printf("Test string.\nPrint $ = %------c\nPrint string = %s\nPrint %% = %%\n", '$', "string");
+	ft_printf("Print string. [%s]\nprint pointer [%p]\n", str, str);
+	printf("Print string. [%s]\nprint pointer [%p]\n", str, str);
 	return (0);
 }
