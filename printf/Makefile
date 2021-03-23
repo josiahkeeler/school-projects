@@ -6,4 +6,4 @@ WGCC = gcc -Wall -Wextra -Werror
 all:$(NAME)
 
 $(NAME):
-	$(WGCC) printf.c ft_convert_alpha.c ft_puthex.c ft_flags.c libft/libft.a
+	$(WGCC) printf.c ft_convert_alpha.c ft_convert_numbers.c ft_puthex.c ft_flags.c libft/libft.a

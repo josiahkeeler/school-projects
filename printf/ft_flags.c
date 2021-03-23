@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josiahkeeler <josiahkeeler@student.42.f    +#+  +:+       +#+        */
+/*   By: jokeeler <jokeeler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:10:51 by josiahkeele       #+#    #+#             */
-/*   Updated: 2021/02/27 18:21:11 by josiahkeele      ###   ########.fr       */
+/*   Updated: 2021/03/22 15:59:08 by jokeeler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

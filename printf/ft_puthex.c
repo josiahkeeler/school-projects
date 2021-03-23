@@ -32,18 +32,3 @@ void	ft_puthex(unsigned long n, char specifier)
 	while (i)
 		ft_putchar_fd(hex[--i], 1);
 }
-
-void	ft_convert_hex(const char *input, va_list ap)
-{
-	if (*input && (*input == 'x' || *input == 'X'))
-		ft_puthex((unsigned long)va_arg(ap, void *), *input);
-}
-
-void	ft_convert_ptr(const char *input, va_list ap)
-{
-	if (*input && *input == 'p')
-	{
-		ft_putstr_fd("0x", 1);
-		ft_puthex((unsigned long)va_arg(ap, void *), 'x');
-	}
-}

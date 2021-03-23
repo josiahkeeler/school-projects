@@ -6,7 +6,7 @@
 /*   By: jokeeler <jokeeler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:31:36 by josiahkeele       #+#    #+#             */
-/*   Updated: 2021/03/19 00:42:57 by jokeeler         ###   ########.fr       */
+/*   Updated: 2021/03/23 16:15:16 by jokeeler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ va_end
 https://alvinalexander.com/programming/printf-format-cheat-sheet/
 • It will manage any combination of the following flags: ’-0.*’ and minimum field
 width with all conversions
+• %3   minimum width 
+• %-   left justify
+• %0   zero fill
+• %3.2 
 • It will be compared with the real printf
 • You must use the command ar to create your librairy, using the command libtool
 is forbidden. **/
@@ -66,11 +70,8 @@ const char *arg_loop(const char *input, va_list ap)
 	{
 		input++;
 		input = ft_flags(input);
-		ft_convert_char(input, ap);
-		ft_convert_str(input, ap);
-		ft_convert_spec(input);
-		ft_convert_ptr(input, ap);
-		ft_convert_hex(input, ap);
+		ft_convert_alpha(input, ap);
+		ft_convert_numbers(input, ap);
 		input++;
 	}
 	else if (*input)
@@ -78,16 +79,19 @@ const char *arg_loop(const char *input, va_list ap)
 	return (input);
 }
 
-
 int main(void)
 {
 	char *str;
+	unsigned int l;
 
+	l = 744674407;
 	str = "hello world";
 	ft_printf("Test string.\nPrint $ = %------c\nPrint string = %s\nPrint %% = %%\n", '$', "string");
-	ft_printf("Print hex [%X]\n", -20);
-	printf("Print hex [%X]\n", -20);
+	ft_printf("Print hex [%X]\n", l);
+	printf("Print hex [%X]\n", l);
 	ft_printf("Print string. [%s]\nprint pointer [%p]\n", str, str);
 	printf("Print string. [%s]\nprint pointer [%p]\n", str, str);
+	ft_printf("Print decimal. [%u]\n", -200);
+	printf("Print decimal. [%u]\n", -200);
 	return (0);
 }
