@@ -14,10 +14,10 @@
 
 void	ft_puthex(unsigned long n, char specifier)
 {
-	char hex[20];
-	int i;
-	unsigned long loop;
-	char *base16;
+	char			hex[20];
+	int				i;
+	unsigned long	loop;
+	char			*base16;
 
 	i = 0;
 	loop = 1;
@@ -31,4 +31,42 @@ void	ft_puthex(unsigned long n, char specifier)
 	}
 	while (i)
 		ft_putchar_fd(hex[--i], 1);
+}
+
+void	ft_putuint(unsigned int n)
+{
+	if (n > 9)
+		ft_putuint(n / 10);
+	ft_putchar_fd(n % 10 + '0', 1);
+}
+
+int	ft_intlen(long n, int div)
+{
+	int	i;
+
+	i = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
+	while (n)
+	{
+		n /= div;
+		i++;
+	}
+	return (i);
+}
+
+int	ft_ulen(unsigned long n, int div)
+{
+	int	i;
+
+	i = 0;
+	while (n)
+	{
+		n /= div;
+		i++;
+	}
+	return (i);
 }
