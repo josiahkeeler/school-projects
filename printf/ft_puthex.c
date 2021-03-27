@@ -45,7 +45,7 @@ int	ft_intlen(long n, int div)
 	int	i;
 
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		n *= -1;
 		i++;
@@ -63,6 +63,8 @@ int	ft_ulen(unsigned long n, int div)
 	int	i;
 
 	i = 0;
+	if (!n)
+		i++;
 	while (n)
 	{
 		n /= div;

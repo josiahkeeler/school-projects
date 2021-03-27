@@ -31,6 +31,8 @@ void		ft_putuint(unsigned int);
 int			ft_intlen(long, int);
 int			ft_ulen(unsigned long, int);
 void		init_flags(t_format *flags);
+int			ft_abs(int);
+
 
 
 
